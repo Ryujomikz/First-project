@@ -18,7 +18,43 @@
             padding: 20px;
             box-sizing: border-box
         }
+
+        #section {
+            width: 100%;
+        }
+
+        #section1 {
+            padding: 20px;
+        }
+
+        .img-container {
+            width: 100%;
+            height: 500px;
+            /* overflow: hidden; */
+        }
+
+        .img-container img {
+            width: 100%;
+            /* 確保圖片填滿容器 */
+            height: 100%;
+            /* 保持比例 */
+            object-fit: cover;
+            /* 填滿容器而不變形 */
+        }
+
+        .text-shadow {
+            text-shadow: black 1px 0 10px;
+            font-size: 50px;
+        }
+
+        .object-fit {
+            object-fit: cover;
+        }
     </style>
+
+    <script>
+
+    </script>
 </head>
 
 <body>
@@ -33,23 +69,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">首頁</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">精選文章</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Dropdown
+                            山友分享
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">心得</a></li>
+                            <li><a class="dropdown-item" href="#">相簿</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">其他</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -57,13 +93,139 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">搜尋</button>
                 </form>
             </div>
         </div>
     </nav>
 
+    <section id="section">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+                    aria-label="Slide 7"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="img-container">
+                        <img src="../IMG/八仙山預覽圖.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block">
+                            <h1 class="text-shadow">八仙山</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-container">
+                        <img src="../IMG/馬崙山預覽圖.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block">
+                            <h1 class="text-shadow">馬崙山</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-container">
+                        <img src="../IMG/屋我尾山預覽圖.JPG" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block">
+                            <h1 class="text-shadow">屋我尾山</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-container">
+                        <img src="../IMG/波津加山預覽圖.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block">
+                            <h1 class="text-shadow">波津加山</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-container">
+                        <img src="../IMG/東卯山預覽圖.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block">
+                            <h1 class="text-shadow">東卯山</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-container">
+                        <img src="../IMG/白毛山預覽圖1.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block">
+                            <h1 class="text-shadow">白毛山</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-container">
+                        <img src="../IMG/唐麻丹山預覽圖.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block">
+                            <h1 class="text-shadow">唐麻丹山</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section>
+        <h3 id="section1">登山小知識</h3>
+        <div class="d-flex p-3 bg-warning">
+            <div class="card w-50 m-auto">
+                <div class="card-body">
+                    <img src="../IMG/小知識圖/落石.jpeg" alt="" class="img-fluid">
+                    <h4 class="card-title">遇到地震怎麼辦?</h4>
+                </div>
+                <card class="d-flex card-footer">
+                    <p>你必須知道的事</p>
+                    <a href="#"class="ms-auto stretched-link"></a>
+                </card>
+            </div>
+            <div class="card w-50 m-auto">
+                <div class="card-body">
+                    <img src="../IMG/小知識圖/用品.jpeg" alt="" class="img-fluid">
+                    <h4 class="card-title">登山該帶甚麼?</h4>
+                </div>
+                <card class="d-flex card-footer">
+                    <p>必須帶的用品</p>
+                    <a href="https://hiking.biji.co/index.php?q=trail&act=detail&id=265"
+                        class="ms-auto stretched-link"></a>
+                </card>
+            </div>
+            <div class="card w-50 m-auto">
+                <div class="card-body">
+                    <img src="../IMG/小知識圖/體能.jpeg" alt="" class="img-fluid">
+                    <h4 class="card-title">登山前該做甚麼?</h4>
+                </div>
+                <card class="d-flex card-footer">
+                    <p>事前準備</p>
+                    <a href="https://hiking.biji.co/index.php?q=trail&act=detail&id=265"
+                        class="ms-auto stretched-link"></a>
+                </card>
+            </div>
+        </div>
+    </section>
 
 
 </body>
