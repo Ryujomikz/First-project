@@ -50,6 +50,20 @@
         .object-fit {
             object-fit: cover;
         }
+
+        .section1 {
+            width: 70%;
+        }
+
+        .aside {
+            width: 30%;
+        }
+
+        #loadingimg {
+            border-radius: 50%;
+            width: 50px;
+            height: auto;
+        }
     </style>
 
     <script>
@@ -60,7 +74,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="../IMG/LOGO2.png" alt="" width="180" height="auto"></a>
+            <a class="navbar-brand" href="#"><img src="../IMG/LOGO3.png" alt="" width="180" height="auto"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -88,14 +102,14 @@
                             <li><a class="dropdown-item" href="#">其他</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">search</button>
+                    </form>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">搜尋</button>
-                </form>
+                <a href="" style="display: inline-block;">
+                    <img src="../IMG/小知識圖/loading.jpg" alt="" id="loadingimg">
+                </a>
             </div>
         </div>
     </nav>
@@ -189,44 +203,49 @@
         </div>
     </section>
 
-    <section>
-        <h3 id="section1">登山小知識</h3>
-        <div class="d-flex p-3 bg-warning">
-            <div class="card w-50 m-auto">
-                <div class="card-body">
-                    <img src="../IMG/小知識圖/落石.jpeg" alt="" class="img-fluid">
-                    <h4 class="card-title">遇到地震怎麼辦?</h4>
+    <h3 id="section1">登山小知識</h3>
+    <div class="d-flex">
+        <section class="section1 col-md-8">
+            <div class="d-flex p-3 bg-warning align-items-stretch">
+                <div class="card w-50 m-2 card_box">
+                    <div class="card-body">
+                        <img src="../IMG/小知識圖/落石.jpeg" alt="" class="img-fluid">
+                        <h4 class="card-title">遇到地震怎麼辦?</h4>
+                    </div>
+                    <card class="d-flex card-footer">
+                        <p>你必須知道的事</p>
+                        <a href="#" class="ms-auto stretched-link"></a>
+                    </card>
                 </div>
-                <card class="d-flex card-footer">
-                    <p>你必須知道的事</p>
-                    <a href="#"class="ms-auto stretched-link"></a>
-                </card>
-            </div>
-            <div class="card w-50 m-auto">
-                <div class="card-body">
-                    <img src="../IMG/小知識圖/用品.jpeg" alt="" class="img-fluid">
-                    <h4 class="card-title">登山該帶甚麼?</h4>
+                <div class="card w-50 m-2">
+                    <div class="card-body">
+                        <img src="../IMG/小知識圖/用品.jpeg" alt="" class="img-fluid">
+                        <h4 class="card-title" style="margin-top: auto;">登山該帶甚麼?</h4>
+                    </div>
+                    <card class="d-flex card-footer">
+                        <p>必須帶的用品</p>
+                        <a href="#" class="ms-auto stretched-link"></a>
+                    </card>
                 </div>
-                <card class="d-flex card-footer">
-                    <p>必須帶的用品</p>
-                    <a href="https://hiking.biji.co/index.php?q=trail&act=detail&id=265"
-                        class="ms-auto stretched-link"></a>
-                </card>
-            </div>
-            <div class="card w-50 m-auto">
-                <div class="card-body">
-                    <img src="../IMG/小知識圖/體能.jpeg" alt="" class="img-fluid">
-                    <h4 class="card-title">登山前該做甚麼?</h4>
+                <div class="card w-50 m-2">
+                    <div class="card-body">
+                        <img src="../IMG/小知識圖/體能.jpeg" alt="" class="img-fluid">
+                        <h4 class="card-title" style="margin-top: auto;">登山前該做甚麼?</h4>
+                    </div>
+                    <card class="d-flex card-footer">
+                        <p>事前準備</p>
+                        <a href="#" class="ms-auto stretched-link"></a>
+                    </card>
                 </div>
-                <card class="d-flex card-footer">
-                    <p>事前準備</p>
-                    <a href="https://hiking.biji.co/index.php?q=trail&act=detail&id=265"
-                        class="ms-auto stretched-link"></a>
-                </card>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <aside class="aside col-md-4">
+            <div style="border:5px solid black;">
+                <h1>心得分享</h1>
+            </div>
+        </aside>
+    </div>
 
 </body>
 
