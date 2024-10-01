@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../_css/bootstrap.css">
+    <script src="../_js/bootstrap.bundle.js"></script>
+</head>
+<script>
+window.onload = () => {
+    uid.focus()
+    uid.focus(() => {
+        account.style.visibility = 'visible'
+    })
+
+    
+}
+</script>
+<style>
+    body {
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        height: 100vh;
+    }
+
+    .formborder {
+        background-color: white;
+        width: 600px;
+        padding: 40px;
+        box-shadow: 10px 10px 25px #000000;
+        border-radius: 12px;
+    }
+
+    .formborder input[type='text'] {
+        display: block;
+        width: 100%;
+        /* margin-bottom: 20px; */
+        background: none;
+        padding: 10px;
+        font-size: 15px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .formborder input[type='text']:focus {
+        border-bottom: 1px solid red;
+    }
+
+    .loginbn {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .account {
+        color: red;
+        visibility: hidden;
+    }
+</style>
+
+<body>
+    <form class="formborder p-3">
+        <h1>會員登入</h1>
+        帳號 <input type="text" placeholder="請輸入帳號" required id="uid">
+        <label class="account" id="account">僅限輸入信箱</label><p></p>
+        密碼 <input type="text" placeholder="請輸入密碼" required>
+        <div class="d-flex mt-2">
+            還沒有帳號?<a href="" class="me-auto">立刻註冊</a><a href="">忘記密碼</a>
+        </div>
+
+        <input type="submit" value="登入" class="btn btn-secondary loginbn" id="register">
+        <div class="d-flex">
+            <input type="submit" value="Facebook登入" class="btn btn-primary loginbn me-2">
+            <input type="submit" value="Line登入" class="btn btn-success loginbn">
+        </div>
+
+    </form>
+</body>
+
+</html>
