@@ -9,14 +9,31 @@
     <script src="../_js/bootstrap.bundle.js"></script>
 </head>
 <script>
-window.onload = () => {
-    uid.focus()
-    uid.focus(() => {
-        account.style.visibility = 'visible'
-    })
+    window.onload = () => {
+        const uid = document.getElementById('uid');
+        const account = document.getElementById('account');
 
-    
-}
+        const pass = document.getElementById('pass');
+        const password = document.getElementById('password');
+
+        uid.addEventListener('focus', () => {
+            account.style.visibility = 'visible';
+        });
+
+        uid.addEventListener('blur', () => {
+            account.style.visibility = 'hidden';
+        });
+
+        pass.addEventListener('focus', () => {
+            password.style.visibility = 'visible';
+        });
+
+        pass.addEventListener('blur', () => {
+            password.style.visibility = 'hidden';
+        });
+
+
+    }
 </script>
 <style>
     body {
@@ -36,7 +53,8 @@ window.onload = () => {
         border-radius: 12px;
     }
 
-    .formborder input[type='text'] {
+    .formborder input[type='email'],
+    .formborder input[type='password'] {
         display: block;
         width: 100%;
         /* margin-bottom: 20px; */
@@ -48,7 +66,8 @@ window.onload = () => {
         border-bottom: 1px solid #ccc;
     }
 
-    .formborder input[type='text']:focus {
+    .formborder input[type='email']:focus, 
+    .formborder input[type='password']:focus {
         border-bottom: 1px solid red;
     }
 
@@ -62,22 +81,31 @@ window.onload = () => {
         color: red;
         visibility: hidden;
     }
+
+    .password {
+        color: red;
+        visibility: hidden;
+    }
 </style>
 
 <body>
     <form class="formborder p-3">
         <h1>會員登入</h1>
-        帳號 <input type="text" placeholder="請輸入帳號" required id="uid">
-        <label class="account" id="account">僅限輸入信箱</label><p></p>
-        密碼 <input type="text" placeholder="請輸入密碼" required>
+        帳號 <input type="email" placeholder="請輸入帳號" required id="uid">
+        <label class="account" id="account">僅限輸入信箱</label>
+        <p></p>
+        密碼 <input type="password" placeholder="請輸入密碼" required id="pass">
+        <label class="password" id="password">請輸入密碼8位數</label>
         <div class="d-flex mt-2">
             還沒有帳號?<a href="" class="me-auto">立刻註冊</a><a href="">忘記密碼</a>
         </div>
 
         <input type="submit" value="登入" class="btn btn-secondary loginbn" id="register">
         <div class="d-flex">
-            <input type="submit" value="Facebook登入" class="btn btn-primary loginbn me-2">
-            <input type="submit" value="Line登入" class="btn btn-success loginbn">
+            <a class="btn btn-primary loginbn me-2" href="https://www.facebook.com/" target="_blank">Facebook登入</a>
+            <!-- <input type="submit" value="Facebook登入" class="btn btn-primary loginbn me-2"> -->
+            <a value="Line登入" class="btn btn-success loginbn" href="https://account.line.biz/login?redirectUri=https%3A%2F%2Fmanager.line.biz%2F" target="_blank">Line 登入</a>
+            <!-- <input type="submit" value="Line登入" class="btn btn-success loginbn"> -->
         </div>
 
     </form>

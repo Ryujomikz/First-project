@@ -64,6 +64,21 @@
             width: 50px;
             height: auto;
         }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
     </style>
 
     <script>
@@ -71,8 +86,8 @@
     </script>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-light">
+<body class="bg-white">
+    <nav class="navbar navbar-expand-lg bg-success bg-opacity-75">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="../IMG/LOGO3.png" alt="" width="180" height="auto"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -104,17 +119,17 @@
                     </li>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">search</button>
+                        <button class="btn btn-outline-success" type="submit">🔍</button>
                     </form>
                 </ul>
                 <a href="../Html/登入畫面.html" style="display: inline-block;">
-                    <img src="../IMG/小知識圖/loading.jpg" alt="" id="loadingimg" >
+                    <img src="../IMG/小知識圖/loading.jpg" alt="" id="loadingimg">
                 </a>
             </div>
         </div>
     </nav>
 
-    <section id="section">
+    <section id="section" class="bg-success">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -203,10 +218,10 @@
         </div>
     </section>
 
-    <h3 id="section1">登山小知識</h3>
+    <h3 id="section1">小知識</h3>
     <div class="d-flex">
         <section class="section1 col-md-8">
-            <div class="d-flex p-3 bg-warning align-items-stretch">
+            <div class="d-flex p-3 bg-success bg-opacity-75 align-items-stretch">
                 <div class="card w-50 m-2 card_box">
                     <div class="card-body">
                         <img src="../IMG/小知識圖/落石.jpeg" alt="" class="img-fluid">
@@ -246,6 +261,43 @@
             </div>
         </aside>
     </div>
+
+    <h3 id="section1">新聞</h3>
+    <div class="d-flex">
+        <section class="section1 col-md-8">
+            <div class="d-flex p-3 align-items-stretch bg-success bg-opacity-75">
+                <div class="card w-50 m-2 card_box">
+                    <div class="card-body">
+                        <img src="../IMG/news/東卯山.webp" alt="" class="img-fluid">
+                        <h4 class="card-title">挑戰東卯山昏迷…5旬山友急救仍回天乏術</h4>
+                    </div>
+                    <card class="d-flex card-footer">
+                        <p>你必須知道的事</p>
+                        <a href="https://udn.com/news/story/7320/7835689" class="ms-auto stretched-link"></a>
+                    </card>
+                </div>
+                <div class="card w-50 m-2">
+                    <div class="card-body">
+                        <img src="../IMG/news/photo.png" alt="" class="img-fluid">
+                        <h4 class="card-title" style="margin-top: auto;">颱風來襲 大雪山、八仙山及武陵國家森林遊樂區明再休園</h4>
+                    </div>
+                    <card class="d-flex card-footer">
+                        <p>必須帶的用品</p>
+                        <a href="https://udn.com/news/story/7934/8265989" class="ms-auto stretched-link"></a>
+                    </card>
+                </div>
+                <div class="card w-50 m-2">
+                    <div class="card-body">
+                        <img src="../IMG/news/新聞3.png" alt="" class="img-fluid">
+                        <h4 class="card-title" style="margin-top: auto;">【觀光資訊】步道分級安心遊 中市府打造優質登山健行環境</h4>
+                    </div>
+                    <card class="d-flex card-footer">
+                        <p>事前準備</p>
+                        <a href="https://www.mirrormedia.mg/external/ebc_445481" class="ms-auto stretched-link"></a>
+                    </card>
+                </div>
+            </div>
+        </section>
 
 </body>
 
