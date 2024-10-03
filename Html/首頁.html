@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="../_css/bootstrap.css">
     <script src="../_js/bootstrap.bundle.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
         #header {
             border: 5px solid black;
+        }
+
+        body {
+            font-family: "Roboto";
         }
 
         .demo {
@@ -79,9 +85,106 @@
             transform: scale(1.05);
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         }
+
+
+        .base {
+            margin: 20px auto;
+            padding: 20px;
+            width: 400px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font: 900 40px/1.9em "Roboto";
+            color: darkcyan;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        #choclocation {
+            display: block;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            background: #ddd;
+            border-radius: 99em;
+        }
+
+        #name {
+            font: 500 50px/1.9em "Roboto";
+            color: darkcyan;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        #img {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+        }
+
+        .ulweather {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            list-style: none;
+            background: #ededed;
+            border-radius: 20px;
+        }
+
+        .footer {
+            background-color: black;
+        }
     </style>
 
     <script>
+        window.onload = () => {
+
+
+
+            const tempApp = {
+                temp: document.querySelector("#temp"),
+                feels_like: document.querySelector("#feels_like"),
+                temp_max: document.querySelector("#temp_max"),
+                temp_min: document.querySelector("#temp_min"),
+
+                choclocation: document.querySelector("#choclocation"),
+                name: document.querySelector("#name"),
+                img: document.querySelector("#img"),
+                icon: "https://openweathermap.org/img/wn/",
+
+                reader(json) {
+                    this.temp.textContent = json.main.temp;
+                    this.feels_like.textContent = json.main.feels_like;
+                    this.temp_max.textContent = json.main.temp_max;
+                    this.temp_min.textContent = json.main.temp_min;
+
+                    this.name.textContent = this.choclocation.options[this.choclocation.selectedIndex].text;
+                    this.img.setAttribute("src", this.icon + json.weather[0].icon + "@2x.png")
+                },
+                startGet() {
+                    let link = `https://api.openweathermap.org/data/2.5/weather?q=${this.choclocation.value}, TW&units=metric&lang=zh_tw&appid=f20b2dcddf45bafee8dda2c1746ed773`
+                    fetch(link)
+                        .then(res => res.json())
+                        .then(json => {
+                            console.log(json)
+                            this.reader(json);
+                        })
+                },
+                init() {
+                    this.startGet();
+
+                    this.choclocation.addEventListener('change', () => {
+                        this.startGet();
+                    })
+                }
+            };
+
+            tempApp.init();
+        };
 
     </script>
 </head>
@@ -218,9 +321,9 @@
         </div>
     </section>
 
-    <h3 id="section1">小知識</h3>
     <div class="d-flex">
         <section class="section1 col-md-8">
+            <h3 id="section1">小知識</h3>
             <div class="d-flex p-3 bg-success bg-opacity-75 align-items-stretch">
                 <div class="card w-50 m-2 card_box">
                     <div class="card-body">
@@ -256,15 +359,49 @@
         </section>
 
         <aside class="aside col-md-4">
-            <div style="border:5px solid black;">
-                <h1>心得分享</h1>
+            <div class="base bg-success bg-opacity-75">
+                <h1>查詢天氣!</h1>
+                <select name="" id="choclocation">
+                    <option value="Changhua" selected="selected">彰化</option>
+                    <option value="Chiayi">嘉義</option>
+                    <option value="Hsinchu">新竹</option>
+                    <option value="Hualien">花蓮</option>
+                    <option value="Kaohsiung">高雄</option>
+                    <option value="Keelung">基隆</option>
+                    <!-- <option value="Kinmen">金門</option> -->
+                    <!-- <option value="Lienchiang">連江縣</option> -->
+                    <option value="Miaoli">苗栗</option>
+                    <option value="Nantou">南投</option>
+                    <option value="New Taipei">新北市</option>
+                    <option value="Penghu">澎湖</option>
+                    <option value="Pingtung">屏東</option>
+                    <option value="Taichung">台中</option>
+                    <option value="Tainan">台南</option>
+                    <option value="Taipei">台北</option>
+                    <option value="Taitung">台東</option>
+                    <option value="Taoyuan">桃園</option>
+                    <option value="Yilan">宜蘭</option>
+                    <option value="Yunlin">雲林</option>
+                </select>
+                <div id="name">
+                    彰化
+                </div>
+                <img src="" id="img" alt="">
+                <ul class="ulweather">
+                    <li>溫度: <span id="temp"></span>度</li>
+                    <li>體感: <span id="feels_like"></span>度</li>
+                    <li>最高: <span id="temp_max"></span>度</li>
+                    <li>最低: <span id="temp_min"></span>度</li>
+
             </div>
-        </aside>
     </div>
 
-    <h3 id="section1">新聞</h3>
+    </aside>
+    </div>
+
     <div class="d-flex">
         <section class="section1 col-md-8">
+            <h3 id="section1">新聞</h3>
             <div class="d-flex p-3 align-items-stretch bg-success bg-opacity-75">
                 <div class="card w-50 m-2 card_box">
                     <div class="card-body">
@@ -298,6 +435,12 @@
                 </div>
             </div>
         </section>
+        </div>
+        <footer>
+            <div class="footer">
+                1023
+            </div>
+        </footer>
 
 </body>
 
