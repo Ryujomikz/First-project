@@ -15,7 +15,9 @@
         }
 
         body {
-            font-family: "Roboto";
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            letter-spacing: 2px;
         }
 
         .demo {
@@ -88,17 +90,28 @@
 
 
         .base {
-            margin: 20px auto;
+            /* margin: 20px auto; */
             padding: 20px;
-            width: 400px;
-            background-color: white;
+            margin-left: 20px;
+            /* width: 400px; */
+            /* background-color: white; */
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .base2 {
+            /* margin: 20px auto; */
+            padding: 20px;
+            margin-left: 20px;
+            /* width: 400px; */
+            /* background-color: white; */
             border-radius: 20px;
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
             font: 900 40px/1.9em "Roboto";
-            color: darkcyan;
+            /* color: darkcyan; */
             text-align: center;
             letter-spacing: 2px;
         }
@@ -137,6 +150,47 @@
 
         .footer {
             background-color: black;
+            opacity: 0.75;
+            margin-top: 20px;
+        }
+
+        .footer_menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #ddd;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer_menu1 {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #ddd;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer_menu li {
+            margin-right: 20px;
+
+        }
+
+        .footer_menu li:last-child {
+            margin-right: 0;
+
+        }
+
+        .footerimg {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .a_deco {
+            text-decoration: none;
+            color: #ddd;
         }
     </style>
 
@@ -253,10 +307,12 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="img-container">
-                        <img src="../IMG/八仙山預覽圖.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-block">
-                            <h1 class="text-shadow">八仙山</h1>
-                        </div>
+                        <a href="../Html/八仙山.html">
+                            <img src="../IMG/八仙山預覽圖.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-block">
+                                <h1 class="text-shadow">八仙山</h1>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -321,10 +377,10 @@
         </div>
     </section>
 
+    <h3 id="section1">小知識</h3>
     <div class="d-flex">
         <section class="section1 col-md-8">
-            <h3 id="section1">小知識</h3>
-            <div class="d-flex p-3 bg-success bg-opacity-75 align-items-stretch">
+            <div class="d-flex p-3 bg-success bg-opacity-75 align-items-stretch" style="border-radius: 20px;">
                 <div class="card w-50 m-2 card_box">
                     <div class="card-body">
                         <img src="../IMG/小知識圖/落石.jpeg" alt="" class="img-fluid">
@@ -396,13 +452,15 @@
             </div>
     </div>
 
+    <hr>
+
     </aside>
     </div>
 
+    <h3 id="section1">新聞</h3>
     <div class="d-flex">
         <section class="section1 col-md-8">
-            <h3 id="section1">新聞</h3>
-            <div class="d-flex p-3 align-items-stretch bg-success bg-opacity-75">
+            <div class="d-flex p-3 align-items-stretch bg-success bg-opacity-75" style="border-radius: 20px;">
                 <div class="card w-50 m-2 card_box">
                     <div class="card-body">
                         <img src="../IMG/news/東卯山.webp" alt="" class="img-fluid">
@@ -435,12 +493,34 @@
                 </div>
             </div>
         </section>
-        </div>
-        <footer>
-            <div class="footer">
-                1023
+
+        <aside class="aside col-md-4">
+            <div class="base bg-success bg-opacity-75">
+                <ul class="footer_menu1">
+                    <li>推薦app</li>
+                    <hr>
+                    <li><a href="https://zh-tw.hikingbook.net/" class="a_deco"><img src="../IMG/小知識圖/hikingbook.png"
+                                alt="" style="width: 50px;">hiking book</a></li>
+                    <li><a href="https://greentracks.app/" class="a_deco"><img src="../IMG/小知識圖/台中1.png" alt=""
+                                style="width: 50px;">大玩台中</a></li>
+                </ul>
             </div>
-        </footer>
+        </aside>
+    </div>
+    <footer>
+        <div class="footer d-flex">
+            <div style="width: 200px; display: block" class="me-auto">
+                <img src="../IMG/LOGO3.png" alt="" class="img-fluid footerimg">
+            </div>
+            <ul class="footer_menu">
+                <li>關於我們</li>
+                <li>廣告刊登</li>
+                <li>合作夥伴</li>
+                <li>服務條款</li>
+                <li>隱私權政策</li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
 

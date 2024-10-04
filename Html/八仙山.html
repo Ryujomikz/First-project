@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../_css/bootstrap.css">
+    <script src="../_js/bootstrap.bundle.js"></script>
+</head>
+<style>
+    #loadingimg {
+        border-radius: 50%;
+        width: 50px;
+        height: auto;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 2px;
+        width: 100%;
+    }
+
+    section {
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .content {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        flex-wrap: wrap;
+    }
+
+    .content1 {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* text-align: left; */
+        /* flex-wrap: wrap; */
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 1px solid lightgray;
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+        padding: 10px;
+        letter-spacing: 2px;
+    }
+
+    .content img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .content p {
+        width: 40%;
+        margin: 0 20px;
+        font-size: 30px;
+    }
+
+    .content1 tr td:nth-child(1),
+    .content1 tr td:nth-child(3) {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .content1 tr td:nth-child(2),
+    .content1 tr td:nth-child(4) {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .footer {
+            background-color: black;
+            opacity: 0.75;
+            margin-top: 20px;
+        }
+
+        .footer_menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #ddd;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer_menu1 {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #ddd;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer_menu li {
+            margin-right: 20px;
+
+        }
+
+        .footer_menu li:last-child {
+            margin-right: 0;
+
+        }
+
+        .footerimg {
+            align-items: center;
+            justify-content: center;
+        }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-success bg-opacity-75">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="../IMG/LOGO3.png" alt="" width="180" height="auto"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../Html/首頁.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">精選文章</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            山友分享
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">心得</a></li>
+                            <li><a class="dropdown-item" href="#">相簿</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">其他</a></li>
+                        </ul>
+                    </li>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">🔍</button>
+                    </form>
+                </ul>
+                <a href="../Html/登入畫面.html" style="display: inline-block;">
+                    <img src="../IMG/小知識圖/loading.jpg" alt="" id="loadingimg">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="content">
+            <img src="../IMG/八仙山預覽圖.jpg" alt="" width="500px">
+            <p>
+                八仙山因海拔約八千日尺，原擬名「八千山」，之後以較典雅的「八仙山」名之，為谷關七雄之首，以健行的步伐來回約需8小時，步道前半段坡度較陡，上了稜線後一路平緩，全程走在林蔭中，植被由常綠闊葉林進入四季變化明顯的針闊葉混合林，四季景色繽紛多變。
+            </p>
+        </div>
+
+        <table class="content1">
+            <tr>
+                <td>所在縣市</td>
+                <td>臺中市和平區</td>
+                <td>里程</td>
+                <td>單程6公里</td>
+            </tr>
+            <tr>
+                <td>步道類型</td>
+                <td>中級山步道</td>
+                <td>步道型態</td>
+                <td>必須折返</td>
+            </tr>
+            <tr>
+                <td>海拔高度</td>
+                <td>1029~2366公尺</td>
+                <td>高度落差</td>
+                <td>1337公尺</td>
+            </tr>
+            <tr>
+                <td>路面狀況</td>
+                <td>石階、山徑</td>
+                <td>所需時間</td>
+                <td>8 小時 (往返)</td>
+            </tr>
+            <tr>
+                <td>難易度</td>
+                <td>中</td>
+                <td>所屬園區</td>
+                <td>八仙山國家森林遊樂區</td>
+            </tr>
+            <tr>
+                <td>申請入山</td>
+                <td>否</td>
+                <td>申請入園</td>
+                <td>否</td>
+            </tr>
+        </table>
+        <h1>路線地圖</h1>
+        <img src="../IMG/八仙山地圖.jpg" alt="">
+    </section>
+    <footer></footer>
+    <div class="footer d-flex">
+        <div style="width: 200px; display: block" class="me-auto">
+            <img src="../IMG/LOGO3.png" alt="" class="img-fluid footerimg">
+        </div>
+        <ul class="footer_menu">
+            <li>關於我們</li>
+            <li>廣告刊登</li>
+            <li>合作夥伴</li>
+            <li>服務條款</li>
+            <li>隱私權政策</li>
+        </ul>
+    </div>
+    </footer>
+</body>
+
+</html>
